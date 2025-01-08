@@ -24,20 +24,7 @@ Tags: #MOC
 - Circuit Breaking
 - Rate Limiting
 
-## Databases
-- Relational
-  - Sharding
-  - Replication
-  - [[Indexes]]
-  - Partitioning
-- NoSQL
-  - Document
-  - Key-Value
-  - Wide-Column
-  - Graph
-- Database Federation
-- Connection Pooling
-
+- [[databases|Databases]]
 ## Caching
 - Cache Types
   - Client Side
