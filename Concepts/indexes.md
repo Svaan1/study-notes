@@ -23,5 +23,6 @@ Typically non-primary key columns used in JOIN, WHERE, and ORDER BY clauses.
 There can be multiple non-clustered index for each table.
 ### Clustered
 - Alters the data block to match the index, resulting in the row data being stored in order.
+- asdfasdf
 ## Types  
 - Fuzzy Indexes
