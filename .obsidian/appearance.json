@@ -1,0 +1,10 @@
+{
+  "accentColor": "",
+  "cssTheme": "Encore",
+  "showViewHeader": true,
+  "translucency": false,
+  "baseFontSize": 15,
+  "enabledCssSnippets": [
+    "headingSpace"
+  ]
+}

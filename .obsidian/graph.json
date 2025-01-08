@@ -1,0 +1,37 @@
+{
+  "collapse-filter": false,
+  "search": "path:Concepts  ",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "#todo",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "#improve",
+      "color": {
+        "a": 1,
+        "rgb": 16514831
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.380208333333333,
+  "repelStrength": 20,
+  "linkStrength": 1,
+  "linkDistance": 241,
+  "scale": 0.5359795996225993,
+  "close": true
+}
