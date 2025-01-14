@@ -55,4 +55,5 @@ Examples of indexes:
 - [[full-text-search#Indexing|Full Text Search Indexing]] (for searching text content)
 - [[spatial-indexes|Spatial]] (for geographic and geometric data)
 - [[partial-indexes|Partial]] (for a subset of rows based on a condition)
-- [[covering-indexes|Covering]] (index-only scans)
+- [[covering-indexes|Covering]] (index-only scans)[[]]
+- [[sparse-indexes|Sparse]]

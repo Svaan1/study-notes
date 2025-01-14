@@ -4,6 +4,8 @@ Tags: #concept
 ---
 # Two Pointer
 
+- GREAT for ordered lists
+
 ## Examples
 ### Skeleton
 ```python
