@@ -6,5 +6,6 @@
   "baseFontSize": 15,
   "enabledCssSnippets": [
     "headingSpace"
-  ]
+  ],
+  "theme": "obsidian"
 }
