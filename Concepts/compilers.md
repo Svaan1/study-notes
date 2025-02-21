@@ -44,3 +44,14 @@ The chain abra has 5 possible sufixes: abra, bra, ra, a and empty
 
 #### Subchains
 Chains created by removing the prefix and/or sufix of another chain
+
+#### Set of every possible chain
+
+Example:
+- Σ={a, b}
+- Σ*={empty, a, aa, ab, ba, bb, aaa…}
+- Σ+={a, aa, ab, ba ,bb, aaa…}
+
+#### Language
+A formal language L over an alphabet Σ is any subset of Σ*, L ⊆ Σ*
+
