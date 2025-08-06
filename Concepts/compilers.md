@@ -1,57 +1,97 @@
-20.02.2025 20:01
-Tags: #concept #todo 
+02.07.2025 17:04
+Tags: #concept
 
 ---
 # Compilers
 
-### Alphabet
-Usually represented by Σ, an alphabet can be described as a finite set of symbols (atomic unit) of some kind.
+## Basic Concepts
+### Machine Code
+Instructions are sent to the CPU via machine code, which is stored as binary data.
 
-Example:
-- Σ={a,b,c … z} - roman alphabet
-- Σ={0, 1} - binary alphabet
-- Σ=(X) -m empty alphabet
+A machine code instruction looks roughly like this:
 
-```ad-warning
-Sets like the natural numbers **cannot** be considered an alphabet, as alphabets cannot be infinite.
-```
-### Symbols
-There is not a formal definition for a symbol. $MORE$
-### Chains
-A finite sequence of juxtaposed symbols.
-#### Length
-ω length of a chain notation — MORE —
-| ω | means the length of the chain ω
-#### Concatenation
-if μ and ω are chains, then ω.μ  is the concatenation of the chain μ with the chain ω.
-#### Sucessive Concatenation
-Given ω=ab, μ=ba → ωμ=abba 
+0101 | 1010 | 0110 | 0000 | 0100 | 0000 | 0000 | 0000
+   5        A         6         0          4         0          0          0
 
-- $ω^3$ 
- ---– MORE --–
-#### Unit Chain
-chains made out of a single symbol
+Where
+- `5A`: Code of the sum operation
+- `6`: Number of the register where the sum will be executed
+- `04000`: Memory address of one of the operands to be used in the sum
 
-#### Prefixes
-The chain abra has 5 possible prefixes: abra, abr, ab, a, empty-symbol
+### Assembly Languages
+Assembly languages facilitate the codification process by giving aliases to machine instructions, giving easier access to data, addresses and operations.
 
-(Prefixo Proprio) every prefix that its not the chain itself
+The instruction used as exemple above can be translated to the following assembly instruction:
 
-#### Suffix
-The chain abra has 5 possible sufixes: abra, bra, ra, a and empty
+`ADD 6, J`
 
-(Sufixo Proprio) every suffix that its not the chain itself
+### Assemblers
+CPU vendors provide assemblers, applications that translate assembly language instructions to machine code ones.
 
-#### Subchains
-Chains created by removing the prefix and/or sufix of another chain
+### Low Level Languages
+Coding machine instructions using programming languages where you have direct and mandatory use of volatile hardware components, such as memory addresses and registers are called low-level languages.
 
-#### Set of every possible chain
+###  High Level Languages 
+High level programming languages are the ones which try to abstract and take away this responsibility from the user, making the instructions look closer to natural languages, lowering the complexity and increasing user-friendliness, but at the same time, giving space for lack of control and unpredictability.
 
-Example:
-- Σ={a, b}
-- Σ*={empty, a, aa, ab, ba, bb, aaa…}
-- Σ+={a, aa, ab, ba ,bb, aaa…}
+The conversion from a high level source code to machine code is done trough the use of either an interpreter or a compiler, maybe something somewhere in between.
 
-#### Language
-A formal language L over an alphabet Σ is any subset of Σ*, L ⊆ Σ*
+(Source Code) → (Interpreter / Compiler) → (Machine Code)
 
+### Interpreters
+Interpreters convert source code to machine code in runtime, thus the interpreter needs to be present in the machine running the code, also creating a slower execution time, due to the overhead of the conversion alongside the application's logic.
+
+### Compilers
+Compilers convert source code to machine code instructions in a single operation, often creating a single operational system specific executable file. The executable is independent from the compiler and the source code is harder to decipher, as it will be stored directly as machine code.
+
+### Operations of a Compiler
+
+![[compiler-flow.png]]
+
+- **Lexical Analysis**: Identify and parse tokens out of the code.
+- **Syntactic Analysis**: Creates a valid syntactic tree out of the parsed tokens.
+- **Semantic Analysis**: Validates structures such as undeclared variables, out of scope operations, missing parameters, etc.
+- **Intermediate Code Generation**: Uses the syntactic tree to create a new data structure that closely resembles the target code structure, using three operand operations.
+- **Code Optimization**: Removes and optimizes ambiguous and unnecessary code, such as unreachable code, redundant operations, algebraic operations, etc.
+- **Target Code Generation**: Generates assembly or machine code using the intermediate code.
+
+- **Symbols Table**: Keeps track of all identifiers and its specific type, content, size, memory address, etc.
+- **Error Handling**: Displays or tries to handle any existing errors during compilation.
+
+## Formal Specifications
+
+### Regular Expressions
+- Used to specify patterns of valid tokens in a language.
+- Used in the **lexical** analysis.
+- Can be easily recognized by a deterministic finite automaton .
+
+### Grammars
+- Grammars free of context can be used to determine how symbols can be combined into valid chains.
+- Used in the **syntactic** analysis.
+
+Notations:
+	- **G** = (V, T, P, S)
+	- **V**: non-terminal symbols
+	- **T**: terminal symbols
+	- **P**: production rules
+	- **S**: non-terminal start symbol
+
+Meanings:
+	- **V**: used in the deriving of the source code
+		- cmd_if
+		- cmd_while
+		- cmd_for
+		- cmd_switch
+	- **T**: alphabetical symbols used to describe the source code.
+		- +, -, /, %
+		- if, while, for, switch, etc.
+		- identifiers
+		- numbers
+	- **P**: production rules of a grammar of a type 2 (free of context) language
+		- cmd → cmd_if | cmd_while
+		- cmd_if → if (op_logic) { cmds }
+		- cmds → cmd(cmd)*
+		- op_logic → == |  != | > | < | ≥ | ≤
+	- **S**: non-terminal symbol where the application is created
+		- S = application
+		- application → declarations type main (parameters) command_block
