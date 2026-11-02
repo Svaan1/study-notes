@@ -1,6 +1,9 @@
-19.03.2025 19:31
-Tags: #concept
-
+---
+created: 2025-03-19T19:31
+type: concept
+status: active
+area:
+  - distributed-systems
 ---
 # Replication Log
 

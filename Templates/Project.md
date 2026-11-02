@@ -1,9 +1,10 @@
-{{date:DD.MM.YYYY}} {{time:HH:mm}}
-Tags: #project
-Status: 
-
+--
+created: {{date:YYYY-MM-DD}}T{{time:HH:mm}}
+type: project
+status: stub
+area: []
 ---
-# Project
+# {{title}}
 
 ## Project Overview
 

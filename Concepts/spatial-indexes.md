@@ -1,6 +1,9 @@
-14.01.2025 13:31
-Tags: #concept
-
+---
+created: 2025-01-14T13:31
+type: concept
+status: active
+area:
+  - databases
 ---
 # Spatial Indexes
 

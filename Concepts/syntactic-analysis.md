@@ -1,6 +1,9 @@
-02.07.2025 19:26
-Tags: #concept
-
+---
+created: 2025-07-02T19:26
+type: concept
+status: active
+area:
+  - compilers
 ---
 # Syntactic Analysis
 

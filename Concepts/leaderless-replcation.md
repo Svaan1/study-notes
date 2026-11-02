@@ -1,6 +1,9 @@
-20.03.2025 18:55
-Tags: #concept
-
+---
+created: 2025-03-20T18:55
+type: concept
+status: active
+area:
+  - distributed-systems
 ---
 # Leaderless Replication
 

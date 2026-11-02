@@ -1,6 +1,9 @@
-19.03.2025 20:00
-Tags: #concept
-
+---
+created: 2025-03-19T20:00
+type: concept
+status: active
+area:
+  - distributed-systems
 ---
 # Replication Lag
 

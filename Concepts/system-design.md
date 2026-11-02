@@ -1,6 +1,9 @@
-17.11.2024 10:18
-Tags: #MOC
-
+---
+created: 2024-11-17T10:18
+type: moc
+status: active
+area:
+  - system-design
 ---
 # System Design
 

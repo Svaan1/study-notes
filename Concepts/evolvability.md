@@ -1,6 +1,9 @@
-03.02.2025 17:03
-Tags: #concept
-
+---
+created: 2025-02-03T17:03
+type: concept
+status: active
+area:
+  - system-design
 ---
 # Evolvability
 

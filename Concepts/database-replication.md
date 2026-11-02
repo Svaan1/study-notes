@@ -1,6 +1,10 @@
-19.03.2025 08:46
-Tags: #concept
-
+---
+created: 2025-03-19T08:46
+type: concept
+status: active
+area:
+  - databases
+  - distributed-systems
 ---
 # Database Replication
 

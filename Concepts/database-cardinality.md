@@ -1,6 +1,9 @@
-08.01.2025 09:04
-Tags: #concept
-
+---
+created: 2025-01-08T09:04
+type: concept
+status: active
+area:
+  - databases
 ---
 # Database Cardinality
 

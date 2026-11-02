@@ -1,6 +1,9 @@
-08.01.2025 11:21
-Tags: #concept
-
+---
+created: 2025-01-08T11:21
+type: concept
+status: active
+area:
+  - databases
 ---
 # Full Text Search
 

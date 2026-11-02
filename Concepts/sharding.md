@@ -1,5 +1,8 @@
-07.08.2025 18:55
-Tags: #concept #todo
-
+---
+created: 2025-08-07T18:55
+type: concept
+status: stub
+area:
+  - distributed-systems
 ---
 # Sharding

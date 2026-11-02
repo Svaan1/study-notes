@@ -1,5 +1,8 @@
-10.01.2025 13:37
-Tags: #concept #todo 
-
+---
+created: 2025-01-10T13:37
+type: concept
+status: stub
+area:
+  - algorithms
 ---
 # Pruning

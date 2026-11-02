@@ -1,6 +1,9 @@
-07.08.2025 18:55
-Tags: #concept
-
+---
+created: 2025-08-07T18:55
+type: concept
+status: active
+area:
+  - distributed-systems
 ---
 # Fault Tolerance
 

@@ -1,7 +1,9 @@
-08.01.2025 09:19
-Tags: #MOC
-Status: 
-
+---
+created: 2025-01-08T09:19
+type: moc
+status: active
+area:
+  - databases
 ---
 # Databases
 

@@ -1,6 +1,9 @@
-19.03.2025 20:30
-Tags: #concept
-
+---
+created: 2025-03-19T20:30
+type: concept
+status: active
+area:
+  - distributed-systems
 ---
 # Multi Leader Replication
 

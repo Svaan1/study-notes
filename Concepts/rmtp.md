@@ -1,6 +1,9 @@
-03.01.2025 03:45
-Tags: #concept
-
+---
+created: 2025-01-03T03:45
+type: concept
+status: active
+area:
+  - networking
 ---
 # Real Time Messaging Protocol
 

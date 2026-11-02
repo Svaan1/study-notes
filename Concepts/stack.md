@@ -1,6 +1,9 @@
-10.01.2025 09:10
-Tags: #concept
-
+---
+created: 2025-01-10T09:10
+type: concept
+status: active
+area:
+  - algorithms
 ---
 # Stack
 

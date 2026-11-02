@@ -1,6 +1,9 @@
-03.02.2025 17:31
-Tags: #concept
-
+---
+created: 2025-02-03T17:31
+type: concept
+status: active
+area:
+  - system-design
 ---
 # Serialization
 

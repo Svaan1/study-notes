@@ -1,6 +1,9 @@
-20.02.2025 20:01
-Tags: #concept #todo 
-
+---
+created: 2025-02-20T20:01
+type: concept
+status: wip
+area:
+  - compilers
 ---
 # Formal Languages
 

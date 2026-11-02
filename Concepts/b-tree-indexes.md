@@ -1,6 +1,9 @@
-08.01.2025 09:23
-Tags: #concept
-
+---
+created: 2025-01-08T09:23
+type: concept
+status: active
+area:
+  - databases
 ---
 # B-Tree Indexes
 

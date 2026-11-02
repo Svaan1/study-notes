@@ -1,6 +1,9 @@
-19.03.2025 19:25
-Tags: #concept
-
+---
+created: 2025-03-19T19:25
+type: concept
+status: active
+area:
+  - distributed-systems
 ---
 # Leader Based Replication
 

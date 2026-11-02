@@ -1,6 +1,9 @@
-07.08.2025 19:05
-Tags: #concept
-
+---
+created: 2025-08-07T19:05
+type: concept
+status: active
+area:
+  - distributed-systems
 ---
 # Trade-offs
 

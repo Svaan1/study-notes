@@ -1,5 +1,8 @@
-10.01.2025 14:22
-Tags: #concept
-
+---
+created: 2025-01-10T14:22
+type: concept
+status: stub
+area:
+  - algorithms
 ---
 # Backtracking

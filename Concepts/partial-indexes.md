@@ -1,6 +1,9 @@
-14.01.2025 14:17
-Tags: #concept
-
+---
+created: 2025-01-14T14:17
+type: concept
+status: active
+area:
+  - databases
 ---
 # Partial Indexes
 

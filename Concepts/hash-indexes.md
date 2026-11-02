@@ -1,6 +1,9 @@
-04.01.2025 17:11
-Tags: #concept
-
+---
+created: 2025-01-04T17:11
+type: concept
+status: active
+area:
+  - databases
 ---
 # Hash Indexes  
 

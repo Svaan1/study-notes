@@ -1,6 +1,9 @@
-14.01.2025 14:19
-Tags: #concept
-
+---
+created: 2025-01-14T14:19
+type: concept
+status: active
+area:
+  - databases
 ---
 # Sparse Indexes
 

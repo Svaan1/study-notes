@@ -1,6 +1,9 @@
-08.08.2025 18:13
-Tags: #concept
-
+---
+created: 2025-08-08T18:13
+type: concept
+status: active
+area:
+  - distributed-systems
 ---
 # MapReduce
 

@@ -1,6 +1,10 @@
-20.03.2025 21:10
-Tags: #concept #todo 
-
+---
+created: 2025-03-20T21:10
+type: concept
+status: wip
+area:
+  - databases
+  - distributed-systems
 ---
 # Database Partitioning
 

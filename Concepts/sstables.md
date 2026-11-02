@@ -1,5 +1,8 @@
-04.01.2025 17:11
-Tags: #concept #todo
-
+---
+created: 2025-01-04T17:11
+type: concept
+status: stub
+area:
+  - databases
 ---
 # SSTables  

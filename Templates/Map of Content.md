@@ -1,8 +1,9 @@
-{{date:DD.MM.YYYY}} {{time:HH:mm}}
-Tags: #MOC
-Status: 
-
 ---
-# Map of Content
+created: {{date:YYYY-MM-DD}}T{{time:HH:mm}}
+type: moc
+status: stub
+area: []
+---
+# {{title}}
 
 ## Topics

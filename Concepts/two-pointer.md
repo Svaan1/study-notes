@@ -1,6 +1,9 @@
-09.01.2025 10:29
-Tags: #concept
-
+---
+created: 2025-01-09T10:29
+type: concept
+status: active
+area:
+  - algorithms
 ---
 # Two Pointer
 

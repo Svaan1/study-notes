@@ -1,9 +1,10 @@
-{{date:DD.MM.YYYY}} {{time:HH:mm}}
-Tags: #list
-Status: 
-
 ---
-# List
+created: {{date:YYYY-MM-DD}}T{{time:HH:mm}}
+type: list
+status: stub
+area: []
+---
+# {{title}}
 
 ## Structure
 - 

@@ -1,6 +1,9 @@
-02.07.2025 17:04
-Tags: #concept
-
+---
+created: 2025-07-02T17:04
+type: concept
+status: active
+area:
+  - compilers
 ---
 # Compilers
 

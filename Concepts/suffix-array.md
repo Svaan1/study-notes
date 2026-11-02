@@ -1,6 +1,9 @@
-10.01.2025 08:55
-Tags: #concept
-
+---
+created: 2025-01-10T08:55
+type: concept
+status: active
+area:
+  - algorithms
 ---
 # Suffix Array
 

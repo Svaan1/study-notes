@@ -1,6 +1,9 @@
-02.07.2025 18:38
-Tags: #concept
-
+---
+created: 2025-07-02T18:38
+type: concept
+status: active
+area:
+  - compilers
 ---
 # Lexical Analysis
 

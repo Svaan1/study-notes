@@ -1,5 +1,8 @@
-03.07.2025 01:09
-Tags: #concept
-
+---
+created: 2025-07-03T01:09
+type: concept
+status: stub
+area:
+  - compilers
 ---
 # Intermediate Code

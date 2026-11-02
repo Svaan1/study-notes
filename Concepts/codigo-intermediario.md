@@ -1,6 +1,9 @@
-12.06.2025 19:36
-Tags: #concept
-
+---
+created: 2025-06-12T19:36
+type: concept
+status: active
+area:
+  - compilers
 ---
 # Código Intermediário
 

@@ -1,6 +1,9 @@
-29.01.2025 19:15
-Tags: #concept
-
+---
+created: 2025-01-29T19:15
+type: concept
+status: active
+area:
+  - databases
 ---
 # Composite Indexes
 
