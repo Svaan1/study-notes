@@ -4,10 +4,11 @@ type: concept
 status: active
 area:
   - distributed-systems
+source:
 ---
 # MapReduce
 
-Aims to make execution of demanding tasks easier by hiding the complexities of handling[[ parallelization]], such as:
+Aims to make execution of demanding tasks easier by hiding the complexities of handling parallelization, such as:
 
 - __Inter-machine communication__
 - __Partitioning of the input data__: reduces the I/O bottleneck by distributing the input data into thousands of machines, often addressing tasks to machines which its input is present in.
@@ -45,3 +46,7 @@ def reduce(key: str, values: list):
 
 ## Implementation
 
+## Related
+- [[parallelization]]
+- [[gfs]]
+- [[idempotency]]

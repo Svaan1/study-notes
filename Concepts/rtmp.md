@@ -4,6 +4,7 @@ type: concept
 status: active
 area:
   - networking
+source:
 ---
 # Real Time Messaging Protocol
 

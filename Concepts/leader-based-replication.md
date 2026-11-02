@@ -1,9 +1,12 @@
 ---
 created: 2025-03-19T19:25
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - distributed-systems
+source:
 ---
 # Leader Based Replication
 
@@ -11,7 +14,7 @@ Each node that stores a copy of the database is called a replica. Every write to
 
 One of the replicas is designated the _leader_ When clients want to write to the database, they must send their requests to the leader, which first writes the new data to its local storage.
 
-The other replicas are known as _followers_. Whenever the leader writes new data to its local storage, it also sends the data change to all of its followers as part of a [[replication-log|replication log]] or _change stream_. Each follower takes the log from the leader and updates its local copy of the database accordingly, by applying all writes in the same order as they were processed on the leader.
+The other replicas are known as _followers_. Whenever the leader writes new data to its local storage, it also sends the data change to all of its followers as part of a replication log or _change stream_. Each follower takes the log from the leader and updates its local copy of the database accordingly, by applying all writes in the same order as they were processed on the leader.
 
 When a client wants to read from the database, it can query either the leader or any of the followers. However, writes are only accepted on the leader (the followers are read-only from the client’s point of view).
 ## Synchronous vs Asynchronous
@@ -29,7 +32,7 @@ Leader-based replications are often configured to be completely **asynchronous**
 
 1. Take a consistent snapshot of the leader’s database at some point in time, if possible, without taking a lock on the entire database. Most databases have this feature, as it is also required for backups. In some cases, third-party tools are needed, such as _innobackupex_ for MySQL.
 2. Copy the snapshot to the new follower node.
-3. The follower connects to the leader and requests all the data changes that have happened since the snapshot was taken. This requires that the snapshot is associated with an exact position in the leader’s [[replication-log|replication log]]. That position has various names: for example, PostgreSQL calls it the _log sequence number_, and MySQL calls it the _binlog coordinates_.
+3. The follower connects to the leader and requests all the data changes that have happened since the snapshot was taken. This requires that the snapshot is associated with an exact position in the leader’s replication log. That position has various names: for example, PostgreSQL calls it the _log sequence number_, and MySQL calls it the _binlog coordinates_.
 4. When the follower has processed the backlog of data changes since the snapshot, we say it has _caught up_. It can now continue to process data changes from the leader as they happen.
 
 ## Handling Node Outages
@@ -49,12 +52,19 @@ Failover can happen manually or automatically, the automatic process usually con
 
 Failover is fraught with things that can go wrong:
 
-- [[replication-lag|Replication lag]]
-- [[system-coordination-failure|System coordination failure]]
-- [[split-brain-syndrome|Split brain syndrome]]
-- [[timeout-tuning-dilemma|Timeout tuning dilemma]]
+- Replication lag
+- System coordination failure
+- Split brain syndrome
+- Timeout tuning dilemma
 
 ```ad-bug
 There are no easy solution to these problems. For this reason, some operations teams prefer to perform failovers manually, even if the software supports automatic failover.
 ```
 
+## Related
+- [[replication-log]]
+- [[replication-lag]]
+- [[system-coordination-failure]]
+- [[split-brain-syndrome]]
+- [[timeout-tuning-dilemma]]
+- [[database-replication]]

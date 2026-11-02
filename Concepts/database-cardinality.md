@@ -4,10 +4,11 @@ type: concept
 status: active
 area:
   - databases
+source:
 ---
 # Database Cardinality
 
-Cardinality refers to the number of unique values in a column relative to the total number of rows in a [[databases|database]].
+Cardinality refers to the number of unique values in a column relative to the total number of rows in a database.
 
 ## Categorization
 
@@ -27,3 +28,7 @@ Low Cardinality:
 - Examples: status (active/inactive), gender, country codes
 - A `subscription_type` column with only values like "free", "basic", "premium"
 - If you have 1 million rows but only 5 possible values, that's low cardinality
+
+## Related
+- [[databases]]
+- [[database-indexes]]

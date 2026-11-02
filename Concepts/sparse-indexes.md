@@ -4,6 +4,7 @@ type: concept
 status: active
 area:
   - databases
+source:
 ---
 # Sparse Indexes
 
@@ -15,5 +16,6 @@ The index skips over any document that is missing the indexed field. The index i
 If the sort key doesn't appear in every table item, or if the index partition key is not present in the item, the index is said to be _sparse_.
 ```
 
-## Related Notes
+## Related
 - [[partial-indexes|Partial Indexes]]
+- [[database-indexes]]

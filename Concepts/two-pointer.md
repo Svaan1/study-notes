@@ -1,9 +1,12 @@
 ---
 created: 2025-01-09T10:29
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - algorithms
+source:
 ---
 # Two Pointer
 

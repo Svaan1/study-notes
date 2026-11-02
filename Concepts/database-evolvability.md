@@ -1,9 +1,12 @@
 ---
 created: 2025-02-03T18:17
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - databases
+source:
 ---
 # Database Evolvability
 
@@ -24,7 +27,13 @@ Solving this is not a hard problem; you just need to be aware of it.
 ## Archival Storage
 
 Perhaps you take a snapshot of your database from time to time, say for backup purposes or for
-loading into a [[data warehouse]]. In this case, the data dump will typically be encoded using the latest schema, even if the original encoding in the source database contained a mixture of schema versions from different eras. Since you’re copying the data anyway, you might as well encode the copy of the data consistently.
+loading into a data warehouse. In this case, the data dump will typically be encoded using the latest schema, even if the original encoding in the source database contained a mixture of schema versions from different eras. Since you’re copying the data anyway, you might as well encode the copy of the data consistently.
 
-As the data dump is written in one go and is thereafter immutable, formats like [[Avro]] object
-container files are a good fit. This is also a good opportunity to encode the data in an analytics-friendly column-oriented format such as [[Parquet]].
+As the data dump is written in one go and is thereafter immutable, formats like Avro object
+container files are a good fit. This is also a good opportunity to encode the data in an analytics-friendly column-oriented format such as Parquet.
+
+## Related
+- [[data-warehousing]]
+- [[avro]]
+- [[parquet]]
+- [[evolvability]]

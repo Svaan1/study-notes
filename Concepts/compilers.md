@@ -1,9 +1,12 @@
 ---
 created: 2025-07-02T17:04
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - compilers
+source:
 ---
 # Compilers
 
@@ -98,3 +101,9 @@ Meanings:
 	- **S**: non-terminal symbol where the application is created
 		- S = application
 		- application → declarations type main (parameters) command_block
+
+## Related
+- [[lexical-analysis]]
+- [[syntactic-analysis]]
+- [[intermediate-code]]
+- [[formal-languages]]

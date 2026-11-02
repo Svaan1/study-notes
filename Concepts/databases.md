@@ -7,11 +7,10 @@ area:
 ---
 # Databases
 
-## Relational
-  - Sharding
-  - Replication
+## Core Concepts
+  - [[database-replication|Replication]]
   - [[database-indexes]]
-  - Partitioning
+  - [[database-partitioning|Partitioning]]
 ## NoSQL
   - Document
   - Key-Value
@@ -20,3 +19,8 @@ area:
 ## Extras
 - Database Federation
 - Connection Pooling
+- [[database-evolvability|Database Evolvability]]
+
+## Related
+- [[system-design]]
+- [[distributed-systems]]

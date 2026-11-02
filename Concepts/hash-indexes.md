@@ -4,12 +4,13 @@ type: concept
 status: active
 area:
   - databases
+source:
 ---
 # Hash Indexes  
 
-Most commonly used [[database-indexes|index]] in data management. It is created on a column that contains unique values, such as a primary key or email address.
+Most commonly used index in data management. It is created on a column that contains unique values, such as a primary key or email address.
 
-Rarely used over [[b-tree-indexes|b-trees]].
+Rarely used over b-trees.
 
 - Only supports exact match queries
 - No ordering preserved (can't do range scans)
@@ -51,3 +52,7 @@ The only case where it would make sense considering them is when the value being
 In PostgreSQL, b-tree indexes have a hard limit on the size of index entries at around 1/3 of the block size. So if even 0.00001% of your table rows might have values longer than the limit, you have a problem. Hash indexes avoid this limitation.
 
 Good when an dealing with the indexing of a quite large field, around 24+ bytes on average (around that length sizes of indexes breaks even. assuming we don't have a lot of duplicate values where `btree index deduplication` optimization kicks in or break even point will be higher)
+
+## Related
+- [[database-indexes]]
+- [[b-tree-indexes]]

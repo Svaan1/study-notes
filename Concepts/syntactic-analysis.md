@@ -4,6 +4,7 @@ type: concept
 status: active
 area:
   - compilers
+source:
 ---
 # Syntactic Analysis
 
@@ -56,3 +57,8 @@ Uses a stack to apply a production rule.
 	2. If the symbol at the top of the stack is terminal.
 		1. if the symbol at the top of the stack and the current input symbol matches, remove the symbol from the stack and go to the next input symbol
 		2. if they don’t match, its a syntactic error
+
+## Related
+- [[compilers]]
+- [[lexical-analysis]]
+- [[intermediate-code]]

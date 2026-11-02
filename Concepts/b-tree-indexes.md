@@ -4,10 +4,11 @@ type: concept
 status: active
 area:
   - databases
+source:
 ---
 # B-Tree Indexes
 
-As the name states, this type of [[database-indexes|index]] uses [[B-trees]] as the underlying data structure, while also adding additional database specific optimizations.
+As the name states, this type of index uses B-trees as the underlying data structure, while also adding additional database specific optimizations.
 
 ## Time Complexities
 
@@ -33,3 +34,7 @@ However, these are only  theoretical complexities, real-world performance depend
 - Pure equality searches (hash tables are faster)
 - Write-heavy workloads with random inserts (due to re balancing overhead)
 - Memory-constrained environments (due to overhead per node)
+
+## Related
+- [[database-indexes]]
+- [[b-trees]]

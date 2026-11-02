@@ -4,6 +4,7 @@ type: concept
 status: active
 area:
   - databases
+source:
 ---
 # Full Text Search
 
@@ -51,7 +52,7 @@ This type of search helps refine results using predefined categories and specifi
 
 ## Indexing
 
-A full-text search [[database-indexes|index]] is a specialized data structure that enables the fast, efficient searching of large volumes of textual data.
+A full-text search index is a specialized data structure that enables the fast, efficient searching of large volumes of textual data.
 
 To create a full-text search index, each text field of a dataset is analyzed.
 
@@ -67,8 +68,13 @@ In addition to enhanced query speed, additional optimizations to enhance index s
 ### Index Types
 There are various types of full-text indexes to choose from. Search requirements, data type and volume, and query complexity are key points of consideration for the user when selecting the full-text index method.
 
-Two common full-text indexes include [[inverted-indexes|Inverted indexes]] and [[b-tree-indexes|B-tree indexes]].
+Two common full-text indexes include Inverted indexes and B-tree indexes.
 
 - **Inverted index**: Inverted indexes are the most commonly used. These indexes store the mapping of terms to the documents in which they're contained. They enable rapid lookups during searches and optimize the search process.
 
 - **B-trees and B+ trees**: B-trees and B+ trees are often used when full-text search is integrated into a relational database. Specifically, they are often used for range queries.
+
+## Related
+- [[database-indexes]]
+- [[inverted-indices]]
+- [[b-tree-indexes]]

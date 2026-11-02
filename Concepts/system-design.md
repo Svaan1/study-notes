@@ -16,6 +16,8 @@ area:
 - Availability
 - Consistency Patterns
 - Performance vs Scalability
+- [[evolvability|Evolvability]]
+- [[serialization|Serialization]]
 
 ## Backend Services
 - Load Balancing
@@ -28,6 +30,7 @@ area:
 - Rate Limiting
 
 - [[databases|Databases]]
+- [[distributed-systems|Distributed Systems]]
 ## Caching
 - Cache Types
   - Client Side
@@ -71,6 +74,7 @@ area:
 - Protocols
 - WebSocket
 - Long Polling
+- [[rtmp|RTMP]]
 
 ## Monitoring
 - Metrics
@@ -105,11 +109,11 @@ area:
 - Batch Processing
 - Stream Processing
 - ETL
-- MapReduce
+- [[map-reduce|MapReduce]]
 - Big Data
 
 ## Reliability
-- Fault Tolerance
+- [[fault-tolerance|Fault Tolerance]]
 - Disaster Recovery
 - Backup
 - High Availability

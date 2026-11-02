@@ -1,13 +1,16 @@
 ---
 created: 2025-03-20T18:55
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - distributed-systems
+source:
 ---
 # Leaderless Replication
 
-Other [[database-replication|replication]] techniques, such as [[leader-based-replication|single-leader]] and [[multi-leader-replication|multi-leader]] replication are based on the idea that a client sends a write request to the leader and the database system takes care of copying that write to the other replicas.
+Other replication techniques, such as single-leader and multi-leader replication are based on the idea that a client sends a write request to the leader and the database system takes care of copying that write to the other replicas.
 
 Some data storage systems take a different approach, abandoning the concept of a leader and allowing any replica to directly accept writes from clients. In some leaderless implementations, the client directly sends its writes to several replicas, while in others, a _coordinator node_ does this on behalf of the client. However, unlike a leader database, that coordinator does not enforce a particular ordering of writes.
 
@@ -47,10 +50,17 @@ The quorum condition allows the system to tolerate unavailable nodes as follows:
 Even with _w_ + _r_ > _n_, there are likely to be edge cases where stale values are returned. These depend on the implementation, but possible scenarios include:
 
 - If a sloppy quorum is used, the _w_ writes may end up on different nodes than the r reads, so there is no longer a guaranteed overlap between the _r_ nodes and _w_ nodes.
-- If two writes occur concurrently, the only safe solution is to merge the writes, and if a winner is picked based on a timestamp, writes can be lost due to [[clock-skew]].
+- If two writes occur concurrently, the only safe solution is to merge the writes, and if a winner is picked based on a timestamp, writes can be lost due to clock-skew.
 - If a write happens concurrently with a read, the write may be reflected on only some of the replicas. In this case, it’s undetermined whether the read returns the old or the new value.
 - If a write succeeded on some replicas but failed on others, and overall succeeded on fewer than _w_ replicas, it not rolled back on the replicas where it succeeded. This means that if a write was reported as failed, subsequent reads may or may not return the value from that write
 - If a node carrying a new value fails, and its data is restored from a replica carrying an old value, the number of replicas storing the new value may fall below _w_, breaking the quorum condition.
 - Even if everything is working correctly, there are edge cases in which you can get unlucky with the timing,
 
 Thus, although quorums appear to guarantee that a read returns the latest written value, in practice it is not so simple. Dynamo-style databases are generally optimized for use cases that can tolerate _eventual consistency_.
+
+## Related
+- [[database-replication]]
+- [[leader-based-replication]]
+- [[multi-leader-replication]]
+- [[clock-skew]]
+- [[concurrent-writes]]

@@ -5,6 +5,7 @@ status: active
 area:
   - databases
   - distributed-systems
+source:
 ---
 # Database Replication
 
@@ -19,6 +20,11 @@ All of the difficulty in replication lies in handling changes to replicated data
 ```
 
 ## Types of Replication
-- [[leader-based-replication|Leader Based Replication]]
-- [[multi-leader-replication|Multi Leader Replication]]
-- [[leaderless-replcation|Leaderless Replication]]
+- Leader Based Replication
+- Multi Leader Replication
+- Leaderless Replication
+
+## Related
+- [[leader-based-replication]]
+- [[multi-leader-replication]]
+- [[leaderless-replication]]

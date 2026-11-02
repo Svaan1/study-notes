@@ -1,15 +1,18 @@
 ---
 created: 2025-03-19T20:00
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - distributed-systems
+source:
 ---
 # Replication Lag
 
 In a _read-scaling_ architecture, you can increase the capacity for serving read-only requests simply by adding more followers. However, this approach only realistically works with asynchronous replication—if you tried to synchronously replicate to all followers, a single node failure or network outage would make the entire system unavailable for writing. And the more nodes you have, the likelier it is that one will be down, so a fully synchronous configuration would be very unreliable.
 
-Unfortunately, if an application reads from an _asynchronous_ follower, it may see outdated information if the follower has fallen behind. This leads to apparent inconsistencies in the database: if you run the same query on the leader and a follower at the same time, you may get different results, because not all writes have been reflected in the follower. This inconsistency is just a temporary state, if you stop writing to the database and wait a while, the followers will eventually catch up and become consistent with the leader. For that reason, this effect is known as [[consistency-models|eventual consistency]].
+Unfortunately, if an application reads from an _asynchronous_ follower, it may see outdated information if the follower has fallen behind. This leads to apparent inconsistencies in the database: if you run the same query on the leader and a follower at the same time, you may get different results, because not all writes have been reflected in the follower. This inconsistency is just a temporary state, if you stop writing to the database and wait a while, the followers will eventually catch up and become consistent with the leader. For that reason, this effect is known as eventual consistency.
 ## Anomalies
 Communications between replicated systems can and will eventually fall behind, and when te lag is large, the inconsistencies it introduces are not just a theoretical issue but a real problem for applications.
 ### Reading Your Own Writes
@@ -43,13 +46,20 @@ One way of achieving monotonic reads is to make sure that each user always makes
 ### Consistent Prefix Reads
 This guarantee says that if a sequence of writes happens in a certain order, then anyone reading those writes will see them appear in the same order.
 
-This is a particular problem in [[sharding|partitioned databases]]. The database always applies writes in the same order, reads always see a consistent prefix, so this anomaly cannot happen. However, in many distributed databases, different partitions operate independently, so there is no global ordering of writes: when a user reads from the database, they may see some parts of the database in an older state and some in a newer state.
+This is a particular problem in partitioned databases. The database always applies writes in the same order, reads always see a consistent prefix, so this anomaly cannot happen. However, in many distributed databases, different partitions operate independently, so there is no global ordering of writes: when a user reads from the database, they may see some parts of the database in an older state and some in a newer state.
 
-One solution is to make sure that any writes that are causally related to each other are written to the same partition—but in some applications that cannot be done efficiently. There are also [[causality-tracking|algorithms]] that explicitly keep track of causal dependencies.
+One solution is to make sure that any writes that are causally related to each other are written to the same partition—but in some applications that cannot be done efficiently. There are also algorithms that explicitly keep track of causal dependencies.
 
 ## Solutions
 There are ways in which an application can provide a stronger guarantee than the underlying database, for example, by performing certain kinds of reads on the leader. However, dealing with these issues in application code is complex and easy to get wrong.
 
-It would be better if application developers didn’t have to worry about subtle replication issues and could just trust their databases to “do the right thing.” This is why [[transactions]] exist: they are a way for a database to provide stronger guarantees so that the application can be simpler.
+It would be better if application developers didn’t have to worry about subtle replication issues and could just trust their databases to “do the right thing.” This is why transactions exist: they are a way for a database to provide stronger guarantees so that the application can be simpler.
 
 Single-node transactions have existed for a long time. However, in the move to distributed (replicated and partitioned) databases, many systems have abandoned them, claiming that transactions are too expensive in terms of performance and availability, and asserting that eventual consistency is inevitable in a scalable system. There is some truth in that statement, but it is overly simplistic.
+
+## Related
+- [[consistency-models]]
+- [[database-partitioning]]
+- [[causality-tracking]]
+- [[transactions]]
+- [[leader-based-replication]]

@@ -4,6 +4,7 @@ type: concept
 status: active
 area:
   - algorithms
+source:
 ---
 # Stack
 
@@ -80,3 +81,7 @@ def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
 		stack.append(current_car)
 	return len(stack)
 ```
+
+## Related
+- [[backtracking]]
+- [[pruning]]

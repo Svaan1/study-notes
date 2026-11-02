@@ -4,6 +4,7 @@ type: concept
 status: active
 area:
   - system-design
+source:
 ---
 # Serialization
 
@@ -28,3 +29,6 @@ changes, before anything is deployed.
 
 - For users of statically typed programming languages, the ability to generate code from the schema
 is useful, since it enables type checking at compile time.
+
+## Related
+- [[evolvability]]

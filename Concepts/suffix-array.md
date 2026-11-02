@@ -1,9 +1,12 @@
 ---
 created: 2025-01-10T08:55
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - algorithms
+source:
 ---
 # Suffix Array
 

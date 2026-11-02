@@ -1,13 +1,15 @@
 ---
 created: 2025-03-20T20:39
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - distributed-systems
+source:
 ---
 # Concurrent Writes
 
-←— intro —>
 ## “Happens-before” relationship and concurrency
 Whenever you have two operations A and B, there are three possibilities: either A happened before B, or B happened before A, or A and B are concurrent.
 
@@ -32,7 +34,6 @@ The server can determine whether two operations are concurrent by looking at the
 When a write includes the version number from a prior read, that tells us which previous state the write is based on. If you make a write without including a version number, it is concurrent with all other writes, so it will not overwrite anything, it will just be returned as one of the values on subsequent reads.
 
 ## Handling Write Conflicts
-←– intro —>
 ### Last write wins
 One approach for achieving eventual convergence is to declare that each replica need only store the most “recent” value and allow “older” values to be overwritten and discarded.
 
@@ -45,3 +46,7 @@ The only safe way of using a database with LWW is to ensure that a key is only w
 A reasonable approach to merge siblings is to just take the union between the conflicting writes.
 
 If you want to allow deletions however, an item cannot be simply deleted from the database when it is removed, the system must leave a marker with an appropriate version number to indicate that the item has been removed when merging, also called a tombstone.
+
+## Related
+- [[multi-leader-replication]]
+- [[leaderless-replication]]

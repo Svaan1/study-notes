@@ -1,9 +1,12 @@
 ---
 created: 2025-02-03T17:03
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - system-design
+source:
 ---
 # Evolvability
 
@@ -34,3 +37,7 @@ The process of managing and implementing changes to a database or data storage s
  Schema evolution ensures these changes are handled systematically to avoid disruptions.
  
 Allows the same kind of flexibility as schemaless/schema-on-read JSON databases provide, while also providing better guarantees about your data and better tooling.
+
+## Related
+- [[service-evolvability]]
+- [[database-evolvability]]

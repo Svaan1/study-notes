@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "path:Concepts  ",
+  "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -8,17 +8,24 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "#todo",
+      "query": "tag:#todo  ",
       "color": {
         "a": 1,
         "rgb": 14701138
       }
     },
     {
-      "query": "#improve",
+      "query": "tag:#needs-intro  ",
       "color": {
         "a": 1,
-        "rgb": 16514831
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "[\"type\":\"moc\"]",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
       }
     }
   ],
@@ -27,11 +34,11 @@
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": false,
+  "collapse-forces": true,
   "centerStrength": 0.380208333333333,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 241,
-  "scale": 0.1002659619750843,
-  "close": true
+  "scale": 0.14057116391813704,
+  "close": false
 }

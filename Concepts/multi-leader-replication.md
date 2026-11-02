@@ -1,13 +1,16 @@
 ---
 created: 2025-03-19T20:30
+tags:
+  - needs-intro
 type: concept
 status: active
 area:
   - distributed-systems
+source:
 ---
 # Multi Leader Replication
 
-[[leader-based-replication|Leader Based Replication]] has one major downside: there is only one leader, and all writes must go through it.
+Leader Based Replication has one major downside: there is only one leader, and all writes must go through it.
 
 The natural extension of the leader-based replication model is to allow more than one node to accept writes. Replication still happens in the same way: each node that processes a write must forward that data change to all the other nodes. We call this a _multi-leader_ configuration.
 
@@ -24,7 +27,7 @@ Comparison:
 
 - _Performance_: In the multi-leader architecture, the inter-datacenter network delay is hidden from users by processing every write in the local datacenter and replicating it asynchronously to the other datacenters, which means the perceived performance may be better.
 - _Outage Tolerance_: In a multi-leader configuration, each datacenter can continue operating independently of the others, and replication catches up when the failed datacenter comes back online.
-- _Network Problems Tolerance_: Traffic between datacenters usually goes over the public internet, which may be less reliable than the local network within a datacenter. A [[leader-based-replication||single-leader]] configuration is very sensitive to problems in this inter-datacenter link, because writes are made synchronously over this link. A multi-leader configuration with asynchronous replication can usually tolerate network problems better: a temporary network interruption does not prevent writes being processed.
+- _Network Problems Tolerance_: Traffic between datacenters usually goes over the public internet, which may be less reliable than the local network within a datacenter. A single-leader configuration is very sensitive to problems in this inter-datacenter link, because writes are made synchronously over this link. A multi-leader configuration with asynchronous replication can usually tolerate network problems better: a temporary network interruption does not prevent writes being processed.
 
 Although multi-leader replication has advantages, it also has a big downside: the same data may be concurrently modified in two different datacenters, and those write conflicts must be resolved.
 
@@ -40,9 +43,9 @@ From an architectural point of view, this setup is essentially the same as multi
 
 We don’t usually think of collaborative editing as a database replication problem, but it has a lot in common with the previously mentioned offline editing use case. When one user edits a document, the changes are instantly applied to their local replica and asynchronously replicated to the server and any other users who are editing the same document.
 
-If you want to guarantee that there will be no editing conflicts, the application must obtain a lock on the document before a user can edit it. If another user wants to edit the same document, they first have to wait until the first user has committed their changes and released the lock. This collaboration model is equivalent to [[leader-based-replication|single leader replication]] with [[transactions|transactions]] on the leader.
+If you want to guarantee that there will be no editing conflicts, the application must obtain a lock on the document before a user can edit it. If another user wants to edit the same document, they first have to wait until the first user has committed their changes and released the lock. This collaboration model is equivalent to single leader replication with transactions on the leader.
 
-However, for faster collaboration, you may want to make the unit of change very small and avoid locking. This approach allows multiple users to edit simultaneously, but it also brings all the challenges of multi-leader replication, including requiring [[conflict-resolution|conflict resolution]].
+However, for faster collaboration, you may want to make the unit of change very small and avoid locking. This approach allows multiple users to edit simultaneously, but it also brings all the challenges of multi-leader replication, including requiring conflict resolution.
 
 ## Handling Write Conflicts
 
@@ -72,7 +75,7 @@ If each replica simply applied writes in the order that it saw the writes, the d
 
 Thus, the database must resolve the conflict in a _convergent_ way, which means that all replicas must arrive at the same final value when all changes have been replicated.
 
-- Give each write a unique ID, pick the write with the highest ID as the _winner_, and throw away the other writes. If a timestamp is used, this technique is known as _last write wins_. Although this approach is popular, it is [[concurrent-writes|dangerously prone to data loss]].
+- Give each write a unique ID, pick the write with the highest ID as the _winner_, and throw away the other writes. If a timestamp is used, this technique is known as _last write wins_. Although this approach is popular, it is dangerously prone to data loss.
 - Give each replica a unique ID, and let writes that originated at a higher-numbered replica always take precedence over writes that originated at a lower-numbered replica. This approach also implies data loss.
 - Somehow merge the values together—e.g., order them alphabetically and then concatenate them.
 - Record the conflict in an explicit data structure that preserves all information, and write application code that resolves the conflict at some later time (perhaps by prompting the user).
@@ -80,7 +83,7 @@ Thus, the database must resolve the conflict in a _convergent_ way, which means 
 ### Custom conflict resolution logic
 Most multi-leader replication tools let you write conflict resolution logic using application code. That code may be executed on write or on read.
 
-Note that conflict resolution usually applies at the level of an individual row or document, not for an entire [[transactions|transaction]], each write is still considered separately for the purposes of conflict resolution.
+Note that conflict resolution usually applies at the level of an individual row or document, not for an entire transaction, each write is still considered separately for the purposes of conflict resolution.
 
 ## Multi-Leader Replication Topologies
 
@@ -92,4 +95,12 @@ in circular and star topologies, a write may need to pass through several nodes 
 
 A problem with circular and star topologies is that if just one node fails, it can interrupt the flow of replication messages between other nodes, causing them to be unable to communicate until the node is fixed. The fault tolerance of a more densely connected topology (such as all-to-all) is better because it allows messages to travel along different paths, avoiding a single point of failure.
 
-On the other hand, all-to-all topologies can have issues too. In particular, some network links may be faster than others, with the result that some replication messages may “overtake” others. To order these events correctly, a technique called [[version-vectors|version vectors]] can be used, however, conflict detection techniques are poorly implemented in many multi-leader replication systems.
+On the other hand, all-to-all topologies can have issues too. In particular, some network links may be faster than others, with the result that some replication messages may “overtake” others. To order these events correctly, a technique called version vectors can be used, however, conflict detection techniques are poorly implemented in many multi-leader replication systems.
+
+## Related
+- [[leader-based-replication]]
+- [[transactions]]
+- [[conflict-resolution]]
+- [[concurrent-writes]]
+- [[version-vectors]]
+- [[database-replication]]

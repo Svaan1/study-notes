@@ -4,16 +4,17 @@ type: concept
 status: active
 area:
   - databases
+source:
 ---
 # Bitmap Indexes
 
-Bitmap indexes have traditionally been considered to work well for [[database-cardinality|low cardinality]] columns.
+Bitmap indexes have traditionally been considered to work well for low cardinality columns.
 
-Uses bit arrays (commonly called [[bitmaps]]) and answer queries by performing bitwise logic operations on these bitmaps.
+Uses bit arrays (commonly called bitmaps) and answer queries by performing bitwise logic operations on these bitmaps.
 
-They have a significant space and performance advantage over other structures for query of such data. Their drawback is they are less efficient than the traditional [[b-tree-indexes|B-tree indexes]] for columns whose data is frequently updated: consequently, they are more often employed in read-only systems that are specialized for fast query - e.g., data warehouses, and generally unsuitable for online transaction processing applications.
+They have a significant space and performance advantage over other structures for query of such data. Their drawback is they are less efficient than the traditional B-tree indexes for columns whose data is frequently updated: consequently, they are more often employed in read-only systems that are specialized for fast query - e.g., data warehouses, and generally unsuitable for online transaction processing applications.
 
-Bitmap indexes are also useful in [[data-warehousing|data warehousing]] applications for joining a large fact table to smaller dimension tables such as those arranged in a [[star-schema|star schema]]
+Bitmap indexes are also useful in data warehousing applications for joining a large fact table to smaller dimension tables such as those arranged in a star schema
 
 Some disadvantages:
 - Poor for high cardinality columns (like email addresses)
@@ -44,3 +45,11 @@ Ideal:
 - When space efficiency matters
 - Read-heavy analytical workloads
 - Star schema dimensional tables
+
+## Related
+- [[database-cardinality]]
+- [[bitmaps]]
+- [[b-tree-indexes]]
+- [[data-warehousing]]
+- [[star-schema]]
+- [[database-indexes]]

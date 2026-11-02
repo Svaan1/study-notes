@@ -1,9 +1,13 @@
 ---
 created: 2025-02-20T20:01
+tags:
+  - needs-intro
+  - todo
 type: concept
 status: wip
 area:
   - compilers
+source:
 ---
 # Formal Languages
 
@@ -19,11 +23,11 @@ Example:
 Sets like the natural numbers **cannot** be considered an alphabet, as alphabets cannot be infinite.
 ```
 ### Symbols
-There is not a formal definition for a symbol. $MORE$
+There is not a formal definition for a symbol.
 ### Chains
 A finite sequence of juxtaposed symbols.
 #### Length
-ω length of a chain notation — MORE —
+ω length of a chain notation
 | ω | means the length of the chain ω
 #### Concatenation
 if μ and ω are chains, then ω.μ  is the concatenation of the chain μ with the chain ω.
@@ -31,7 +35,6 @@ if μ and ω are chains, then ω.μ  is the concatenation of the chain μ with t
 Given ω=ab, μ=ba → ωμ=abba 
 
 - $ω^3$ 
- ---– MORE --–
 #### Unit Chain
 chains made out of a single symbol
 
@@ -58,3 +61,6 @@ Example:
 #### Language
 A formal language L over an alphabet Σ is any subset of Σ*, L ⊆ Σ*
 
+## Related
+- [[context-sensitive-languages]]
+- [[compilers]]

@@ -4,6 +4,7 @@ type: concept
 status: active
 area:
   - compilers
+source:
 ---
 # Lexical Analysis
 
@@ -64,3 +65,7 @@ Holds reserved keywords and data of the stored identifiers from the source code,
 ```ad-info
 Types can also be specified after the identifier is created, as the name of the identifier can be declared before the type.
 ```
+
+## Related
+- [[compilers]]
+- [[syntactic-analysis]]
