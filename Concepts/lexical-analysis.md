@@ -15,7 +15,7 @@ Responsibilities:
 - Removes comments and whitespaces
 - Informs if there is still code to be read
 
-Examples of tokens and its corresponding lexema
+Examples of tokens and its corresponding lexeme
 
 | Token           | Description                                           | Lexeme                                     |
 | --------------- | ----------------------------------------------------- | ------------------------------------------ |

@@ -38,12 +38,12 @@ chains made out of a single symbol
 #### Prefixes
 The chain abra has 5 possible prefixes: abra, abr, ab, a, empty-symbol
 
-(Prefixo Proprio) every prefix that its not the chain itself
+(Proper Prefix) every prefix that its not the chain itself
 
 #### Suffix
 The chain abra has 5 possible sufixes: abra, bra, ra, a and empty
 
-(Sufixo Proprio) every suffix that its not the chain itself
+(Proper Suffix) every suffix that its not the chain itself
 
 #### Subchains
 Chains created by removing the prefix and/or sufix of another chain

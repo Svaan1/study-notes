@@ -5,5 +5,5 @@ status: stub
 area:
   - compilers
 ---
-# Linguagens Sensiveis ao Contexto
+# Context Sensitive Languages
 
